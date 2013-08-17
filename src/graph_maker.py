@@ -9,12 +9,13 @@ from pylab import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-class graph_makeer(object):
+class graph_maker(object):
 
     title = ''
     xtitle = ''
     ytitle = ''
     filename = ''
+    color=['b','g','r','c','m','y']
 
     def __init__(self,title,xtitle,ytitle,filename):
         self.title = title
@@ -23,8 +24,17 @@ class graph_makeer(object):
         self.filename = filename
         pass
     
-    def plot(num_data,**data):
+    def plot(self,**data):
+        """
+        1. scaning the parameter correct 
+            a) the parameter number equal to 2n. 
+            b) the parameter number less then 12
+        2.set the figure title
         
+        """        
+        if len(data)>12 or len(data)%2==1:
+            print 'parameter number wrong'
+            
         ax = subplot(111)
         
         
@@ -39,9 +49,9 @@ class graph_makeer(object):
 #         ax.yaxis.set_minor_locator(MultipleLocator(0.1))#set mirror scale
 
         gca().yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-        for index in range(0,num_data):
-            ax.plot(data['x'+str(index)],data['x'+str(index)],'.',color='red')
-        plt.savefig(self.finename,dpi=300)
+        for index in range(0,(len(data)/2)):
+            ax.plot(data['x'+str(index)],data['y'+str(index)],'.',color=self.color[index])#
+        plt.savefig(self.filename,dpi=300)
         pass
     
     
