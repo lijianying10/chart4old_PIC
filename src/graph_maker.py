@@ -55,6 +55,7 @@ class graph_maker(object):
         gca().yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
         for index in range(0,(len(data)/2)):
             ax.plot(data['x'+str(index)],data['y'+str(index)],'.',color=self.color[index])#
+        plt.show()
         plt.savefig(self.filename,dpi=300)
         pass
     
