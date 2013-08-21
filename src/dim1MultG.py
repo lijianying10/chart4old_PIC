@@ -7,6 +7,11 @@ from graph_maker import graph_maker
 
 
 
+###global setting
+xscale = 'liner'#ACCEPT [integer 1 to 10 | 'liner']  example xscale = 10 #means xscale use log10
+yscale = 10
+
+
 
 ####solve data file1
 workpath = r"C:\Users\jianYing\Desktop\targetdata\P0.01E2P"
@@ -50,7 +55,7 @@ x1,y1 =  dp.data1D(fileReader.data, extname, indexname,timeCoe)
 
 
 gm = graph_maker('title','xtitle','ytitle','test')
-gm.plot(x0=x0,y0=y0,x1=x1,y1=y1)
+gm.plot(xscale = xscale , yscale = yscale,x0=x0,y0=y0,x1=x1,y1=y1)
 
 
 print 'finished'

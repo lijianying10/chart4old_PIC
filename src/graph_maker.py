@@ -6,6 +6,7 @@ Created on Sat Aug 17 10:40:58 2013
 """
 
 from pylab import *
+import matplotlib.axes as ax
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -46,7 +47,16 @@ class graph_maker(object):
         xlabel(self.xtitle, fontsize=20)
         ylabel(self.ytitle, fontsize=20)
         
-        
+        if data['xscale'] == 'liner':
+            0==0
+        else:
+            ax.set_xscale('log',basex=int(data['xscale']))
+            
+        if data['yscale'] == 'liner':
+            0==0
+        else:
+            ax.set_yscale('log',basey=int(data['yscale']))
+        #plt.yscale('log')
 #         ax.xaxis.set_major_locator(MultipleLocator(0.0005))#set major scale
 #         ax.xaxis.set_minor_locator(MultipleLocator(0.0001))#set mirror scale
 #         ax.yaxis.set_major_locator(MultipleLocator(0.5))#set major scale
