@@ -30,7 +30,11 @@ class graph_maker(object):
             a) the parameter number equal to 2n. 
             b) the parameter number less then 12
         2.set the figure title
+        3. change the figure attribute
+        4.plot data
+        5.save plot figure
         
+        the 
         """        
         if len(data)>12 or len(data)%2==1:
             print 'parameter number wrong'
@@ -52,6 +56,15 @@ class graph_maker(object):
         for index in range(0,(len(data)/2)):
             ax.plot(data['x'+str(index)],data['y'+str(index)],'.',color=self.color[index])#
         plt.savefig(self.filename,dpi=300)
+        pass
+    
+    def plot2d(self,Z,extent):
+        title(self.title, fontsize=20)
+        xlabel(self.xtitle, fontsize=20)
+        ylabel(self.ytitle, fontsize=20)
+        imshow(Z, cmap=cm.jet, alpha=.9, interpolation='bilinear',extent=extent)
+        colorbar()
+        show()
         pass
     
     

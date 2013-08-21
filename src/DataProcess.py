@@ -82,6 +82,40 @@ class DataProcess(object):
         print len(X)
         print len(Y)
         return X,Y
+    def data2D(self,data,ExtensionName,IndexName,timeCoe,lengthCoe):
+        
+        """
+        1.Collect data from file reader
+        2.computing the extent use *Coe
+        """
+        X = []
+        Y = []
+        for key in data:
+            Y.append(data[key])
+            X.append(int(key[len(IndexName):-len(ExtensionName)]))
+            
+        Z=[]
+        print max(X)
+        for index in range(0,max(X)):
+            position=0
+            for idx in range(0,max(X)):
+                if index == X[idx]:
+                    position = idx
+                    #print idx,position,index
+                    break
+            Z.append(Y[position])
+            
+        
+        Z2=[]
+        for indexx in range(0,len(Z[0])):#65
+            temp=[]
+            for indexy in range(0,len(Z)):#1000
+                temp.append(Z[indexy][indexx])
+            Z2.append(temp)
+            
+
+        extent = [0,len(Z[0])*lengthCoe,0,len(Z)*timeCoe*10]
+        return Z2,extent
         
     def CollectionMaxOutput1D_matplotlib(self,data,ExtensionName,IndexName,timeCoe,chartName):
         X = []
