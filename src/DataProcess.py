@@ -103,7 +103,10 @@ class DataProcess(object):
                     position = idx
                     #print idx,position,index
                     break
-            Z.append(Y[position])
+            temp=[]
+            for i in range(0,len(Y[position])):
+                temp.append(Y[position][(i+1)*-1])
+            Z.append(temp)
             
         
         Z2=[]
@@ -116,6 +119,7 @@ class DataProcess(object):
 
         extent = [0,len(Z[0])*lengthCoe,0,len(Z)*timeCoe*10]
         return Z2,extent
+
         
     def CollectionMaxOutput1D_matplotlib(self,data,ExtensionName,IndexName,timeCoe,chartName):
         X = []

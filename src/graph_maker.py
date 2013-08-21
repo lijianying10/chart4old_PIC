@@ -62,7 +62,24 @@ class graph_maker(object):
         title(self.title, fontsize=20)
         xlabel(self.xtitle, fontsize=20)
         ylabel(self.ytitle, fontsize=20)
+        
         imshow(Z, cmap=cm.jet, alpha=.9, interpolation='bilinear',extent=extent)
+        colorbar()
+        show()
+        pass
+
+
+    def plot3d(self,Z,extent):
+        fig = plt.figure()
+        ax = fig.gca(projection='3d')
+        title(self.title, fontsize=20)
+        xlabel(self.xtitle, fontsize=20)
+        ylabel(self.ytitle, fontsize=20)
+        X = np.arange(extent[0], extent[1], (extent[1]-extent[0])/len(Z))
+        Y = np.arange(extent[2], extent[3], (extent[3]-extent[2])/len(Z[0]))
+        X, Y = np.meshgrid(X, Y)
+        ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.coolwarm,
+                linewidth=0, antialiased=False)
         colorbar()
         show()
         pass
