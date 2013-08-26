@@ -14,7 +14,7 @@ yscale = 10
 
 
 ####solve data file1
-workpath = r"C:\Users\jianYing\Desktop\targetdata\P0.01E2P"
+workpath = r"C:\Users\jianYing\Desktop\target\S1P0.05E0.4"
 indexname = "eRHo"
 extname = ".dat"
 timeCoe = 10e-7
@@ -34,7 +34,7 @@ x0,y0 =  dp.data1D(fileReader.data, extname, indexname,timeCoe)
 
 
 ####solve data file1
-workpath = r"C:\Users\jianYing\Desktop\targetdata\P0.5E2P"
+workpath = r"C:\Users\jianYing\Desktop\target\S1P0.05E1"
 indexname = "eRHo"
 extname = ".dat"
 timeCoe = 10e-7

@@ -37,9 +37,9 @@ class graph_maker(object):
         
         the 
         """        
-        if len(data)>12 or len(data)%2==1:
+        if len(data)>12 or len(data)%2==1 or len(data)<4:
             print 'parameter number wrong'
-            
+            quit()
         ax = subplot(111)
         
         
@@ -63,7 +63,7 @@ class graph_maker(object):
 #         ax.yaxis.set_minor_locator(MultipleLocator(0.1))#set mirror scale
 
         gca().yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-        for index in range(0,(len(data)/2)):
+        for index in range(0,(len(data)/2)-1):
             ax.plot(data['x'+str(index)],data['y'+str(index)],'.',color=self.color[index])#
         plt.show()
         plt.savefig(self.filename,dpi=300)
