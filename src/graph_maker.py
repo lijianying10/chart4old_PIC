@@ -37,7 +37,7 @@ class graph_maker(object):
         
         the 
         """        
-        if len(data)>12 or len(data)%2==1 or len(data)<4:
+        if len(data)>14 or len(data)%2==1 or len(data)<4:
             print 'parameter number wrong'
             quit()
         ax = subplot(111)

@@ -9,12 +9,12 @@ from graph_maker import graph_maker
 
 ###global setting
 xscale = 'liner'#ACCEPT [integer 1 to 10 | 'liner']  example xscale = 10 #means xscale use log10
-yscale = 10
+yscale = 'liner'
 
 
 
 ####solve data file1
-workpath = r"C:\Users\jianYing\Desktop\target\S1P0.05E0.4"
+workpath = r"C:\Users\jianYing\Desktop\S1P0.05E0.4"
 indexname = "eRHo"
 extname = ".dat"
 timeCoe = 10e-7
@@ -33,8 +33,8 @@ x0,y0 =  dp.data1D(fileReader.data, extname, indexname,timeCoe)
 #####################################################################
 
 
-####solve data file1
-workpath = r"C:\Users\jianYing\Desktop\target\S1P0.05E1"
+####solve data file2
+workpath = r"C:\Users\jianYing\Desktop\S1P0.05E1"
 indexname = "eRHo"
 extname = ".dat"
 timeCoe = 10e-7
@@ -55,7 +55,7 @@ x1,y1 =  dp.data1D(fileReader.data, extname, indexname,timeCoe)
 
 
 gm = graph_maker('title','xtitle','ytitle','test')
-gm.plot(xscale = xscale , yscale = yscale,x0=x0,y0=y0,x1=x1,y1=y1)
+gm.plot(xscale = xscale , yscale = yscale,x0=x0,y0=y0,x1=x1,y1=y1)#
 
 
 print 'finished'
