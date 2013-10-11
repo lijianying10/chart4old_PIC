@@ -1,7 +1,7 @@
 @echo off
 set script_type=autogen
 set cwd=%~pd0
-set toolkit_path=c:\exdev\tools\exvim\toolkit
+set toolkit_path=F:\exdev\tools\exvim\toolkit
 set lang_type=c cpp c# javascript java shader python lua vim uc matlab wiki ini make sh batch debug qt swig
 set vimfiles_path=.vimfiles.Project
 set file_filter=*.C *.C++ *.CC *.CP *.CPP *.CXX *.H *.H++ *.HH *.HP *.HPP *.HXX *.INL *.IPP *.CS *.JS *.AS *.JAVA *.HLSL *.VSH *.PSH *.FX *.FXH *.CG *.SHD *.GLSL *.PY *.PYW *.PYX *.PXD *.LUA *.WLUA *.VIM *.UC *.M *.WIKI *.INI *.CFG *.MAK *.MK *.MAKEFILE *.SH *.BSH *.BASH *.KSH *.ZSH *.BAT *.LOG *.ERR *.EXE *.QRC *.PRO *.PRI *.I *.SWG 

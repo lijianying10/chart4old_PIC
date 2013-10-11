@@ -10,7 +10,7 @@ from graph_maker import graph_maker
 
 
 
-workpath = r"C:\Users\jianYing\Desktop\S1P0.05E0.4"
+workpath = r"F:\Users\JianyingLi\Desktop\6"
 indexname = "eRHo"
 extname = ".dat"
 timeCoe = 10e-7

@@ -37,9 +37,17 @@ class graph_maker(object):
         
         the 
         """        
-        if len(data)>14 or len(data)%2==1 or len(data)<4:
-            print 'parameter number wrong'
-            quit()
+        #if len(data)>14 or len(data)%2==1 or len(data)<4:
+        #    print 'parameter number wrong'
+        #    quit()
+        
+
+        #input data
+        Xdata = data['Xdata']
+        Ydata = data['Ydata']  
+        lengenddata = data['legenddata']
+        legendposition = data['legendposition']
+        
         ax = subplot(111)
         
         
@@ -62,9 +70,13 @@ class graph_maker(object):
 #         ax.yaxis.set_major_locator(MultipleLocator(0.5))#set major scale
 #         ax.yaxis.set_minor_locator(MultipleLocator(0.1))#set mirror scale
 
+        tts = []
         gca().yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-        for index in range(0,(len(data)/2)-1):
-            ax.plot(data['x'+str(index)],data['y'+str(index)],'.',color=self.color[index])#
+        for index in range(0,len(Xdata)):
+            print index
+            tt = ax.plot(Xdata[index],Ydata[index],'.',color=self.color[index])#
+            tts = tts+tt
+        plt.legend(tts,lengenddata,numpoints=1,bbox_to_anchor=(legendposition[0], legendposition[1]))
         plt.show()
         plt.savefig(self.filename,dpi=300)
         pass
