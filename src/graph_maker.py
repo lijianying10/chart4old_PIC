@@ -17,6 +17,7 @@ class graph_maker(object):
     ytitle = ''
     filename = ''
     color=['b','g','r','c','m','y']
+    marker=['.','o','+','x','v','^']
 
     def __init__(self,title,xtitle,ytitle,filename):
         self.title = title
@@ -74,7 +75,7 @@ class graph_maker(object):
         gca().yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
         for index in range(0,len(Xdata)):
             print index
-            tt = ax.plot(Xdata[index],Ydata[index],'.',color=self.color[index])#
+            tt = ax.plot(Xdata[index],Ydata[index],self.marker[index],color=self.color[index])#
             tts = tts+tt
         plt.legend(tts,lengenddata,numpoints=1,bbox_to_anchor=(legendposition[0], legendposition[1]))
         plt.show()
